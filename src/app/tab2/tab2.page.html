@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My Training
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">My Training</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list *ngIf="items.length > 0; else emptyList">
+    <ion-item *ngFor="let item of items">
+      {{ item.name }}
+      <ion-button fill="clear" color="danger" (click)="onSelectItemToDelete(item)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+
+  <ng-template #emptyList>
+    <ion-item>
+      <ion-label class="ion-text-center" color="medium">Training List is empty</ion-label>
+    </ion-item>
+  </ng-template>
+
+  <ion-item>  
+    <ion-button (click)="addTraining()">Add</ion-button>
+  </ion-item>
+</ion-content>
+
+
+

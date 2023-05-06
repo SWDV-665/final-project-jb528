@@ -1,0 +1,7 @@
+{
+  "name": "WoofTime",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
